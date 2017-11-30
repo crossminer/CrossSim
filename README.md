@@ -6,4 +6,6 @@ This repository contains tools and dataset for our paper at CAiSE 2018.
   * <b>human evaluation.xlsx</b> contains the qualitative analysis results. It inludes the responses of evaluators;
   * <b>queries.txt</b> contains queries used in the evaluation;
   * list of repositories is stored in <b>repository.txt</b>;
+  * RepoPal results are shown in <b>CrossSim_Results.pdf</b>;
+  * CrossSim3 results are shown in <b>CrossSim_Results.pdf</b>;
 * All supporting tools are stored in <b>tool</b>.
