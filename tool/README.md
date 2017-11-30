@@ -2,7 +2,7 @@ SimRank is a Java program for computing similarities among nodes in a graph. The
 
 We applied SimRank in CrossSim to compute similarites among GitHub open source software projects. First we need to crawl metadata from GitHub and represent it in a graph. Graph is stored in Graph.txt, and each line in the file has the following format:
 
-node1#node2
+```node1#node2```
 
 which specifies the representation of one edge in the graph: node1 -> node2.
 
