@@ -1,0 +1,131 @@
+import java.io.IOException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import br.ufrj.cos.bean.DataSet;
+import br.ufrj.cos.bean.Document;
+import br.ufrj.cos.bean.DocumentQualityDimension;
+import br.ufrj.cos.bean.QualityDimension;
+import br.ufrj.cos.db.HelperAcessDB;
+import br.ufrj.cos.db.HibernateDAO;
+import br.ufrj.cos.foxset.search.GoogleWebSearch;
+import br.ufrj.cos.foxset.search.LiveSearch;
+import br.ufrj.cos.foxset.search.SearchEngine;
+import br.ufrj.cos.foxset.search.SearchException;
+import br.ufrj.cos.foxset.search.WebDocument;
+import br.ufrj.cos.foxset.search.YahooSearch;
+import br.ufrj.cos.foxset.search.SearchEngine.Result;
+import br.ufrj.cos.services.ServiceSearch;
+
+/**
+ * 
+ */
+
+/**
+ * @author Fabricio
+ * 
+ */
+public class CorrecaoRank {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		SearchEngine se = null;
+		int engine = 1;
+		if (engine == 0) {
+			se = new GoogleWebSearch();
+			se.setAppID("F4ZdLRNQFHKUvggiU+9+60sA8vc3fohb");
+		} else if (engine == 1) {
+			se = new YahooSearch();
+			se
+					.setAppID("j3ANBxbV34FKDH_U3kGw0Jwj5Zbc__TDAYAzRopuJMGa8WBt0mtZlj4n1odUtMR8hco-");
+		} else if (engine == 2) {
+			se = new LiveSearch();
+			se.setAppID("A458FF1E859B9A702FCF17ADB54F92FEE3A32A04");
+		}
+
+		HibernateDAO.getInstance().openSession();
+		DataSet dataSet = (DataSet) HibernateDAO.getInstance().loadById(
+				DataSet.class, new Long(577));
+		try {
+			testLinks(se, dataSet, 1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		HibernateDAO.getInstance().closeSession();
+	}
+
+	private static void testLinks(SearchEngine se, DataSet dataSet,
+			int maxBackLinks) throws Exception {
+		if ((dataSet == null) || (se == null))
+			return;
+		Set<Result> links = null;
+		QualityDimension qualityDimension = HelperAcessDB.loadQualityDimension(
+				dataSet, se.getSearchEngineCode());
+		// -------------------
+		// Zerando os scores atuais antes de atualizar com a nova consulta na SE
+		zerarScores(dataSet, qualityDimension);
+		// -------------------
+		try {
+			links = getLinks(se, "relational database", maxBackLinks, false);
+			if (links == null)
+				return;
+			int position = 0;
+			for (Result result : links) {
+				Document document = HelperAcessDB.loadDocumentByDataSetAndUrl(
+						dataSet, result.getURL());
+				if ((qualityDimension != null) && (document != null)) {
+					ServiceSearch.updateSearchRankingScore(document,
+							qualityDimension, links.size(), position);
+				}
+				position++;
+			}
+		} catch (SearchException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		for (Result result : links) {
+			System.out.println(result);
+		}
+		System.out.println(links.size());
+
+	}
+
+	/**
+	 * @param dataSet
+	 * @param qualityDimension
+	 * @throws Exception
+	 */
+	private static void zerarScores(DataSet dataSet,
+			QualityDimension qualityDimension) throws Exception {
+		Collection<Document> docs = HelperAcessDB.loadDocuments(dataSet);
+		for (Document d : docs) {
+			DocumentQualityDimension documentQualityDimension = HelperAcessDB
+					.loadDocumentQualityDimension(d, qualityDimension);
+			if (documentQualityDimension != null) {
+				documentQualityDimension.setScore(0);
+				HibernateDAO.getInstance().update(documentQualityDimension);
+			}
+		}
+	}
+
+	public static Set<Result> getLinks(SearchEngine se, String searchStr,
+			int maxBackLinks, boolean discardSameDomain)
+			throws SearchException, IOException {
+		se.setMaxResults(maxBackLinks);
+		List<Result> results = se.search(searchStr);
+		Set<Result> setURLS = new HashSet<Result>();
+		for (Result result : results) {
+			if (!WebDocument.discardUrl(result.getURL(), discardSameDomain,
+					searchStr))
+				setURLS.add(result);
+		}
+		return setURLS;
+	}
+
+}

@@ -1,0 +1,4 @@
+SimRankRoot=/home/nguyen/Public/Evaluation/SimRank/
+GraphDirectory=/home/nguyen/Public/Evaluation/NeighbourhoodGraph/
+GroundTruthRoot=/home/nguyen/Public/Evaluation/GroundTruth/Last.fm/
+index=15

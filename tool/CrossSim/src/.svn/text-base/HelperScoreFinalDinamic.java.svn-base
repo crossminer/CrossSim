@@ -1,0 +1,171 @@
+import java.awt.Component;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Set;
+
+import javax.swing.JOptionPane;
+
+import br.ufrj.cos.bean.ContextQualityDimensionWeight;
+import br.ufrj.cos.bean.DataSet;
+import br.ufrj.cos.bean.Document;
+import br.ufrj.cos.bean.QualityDimension;
+import br.ufrj.cos.db.HelperAcessDB;
+import br.ufrj.cos.db.HibernateDAO;
+import br.ufrj.cos.matlab.exception.MatLabException;
+import br.ufrj.cos.services.Service;
+
+/**
+ * 
+ */
+
+/**
+ * @author Fabricio
+ * 
+ */
+public class HelperScoreFinalDinamic {
+
+	/**
+	 * @param idDataSet
+	 * @param weightREP
+	 * @param weightCOM
+	 * @param weightTIM
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 * @throws IllegalAccessException
+	 * @throws InstantiationException
+	 */
+	public static String generateScores(Long idDataSet, Integer weightREP,
+			Integer weightCOM, Integer weightTIM, Integer weightGOO,
+			Integer weightYAH, Integer weightLIV, Component component)
+			throws InstantiationException, IllegalAccessException,
+			ClassNotFoundException, SQLException {
+		HashMap<String, Integer> mapWeights = putWeights(weightREP, weightCOM,
+				weightTIM, weightGOO, weightYAH, weightLIV);
+
+		DataSet dataSet = (DataSet) HibernateDAO.getInstance().loadById(
+				DataSet.class, idDataSet);
+
+		if (dataSet != null) {
+			return reFuzzyDataSet(dataSet, mapWeights, component);
+		}
+		return "";
+	}
+
+	public static String reFuzzyDataSet(DataSet dataSet,
+			HashMap<String, Integer> mapWeights, Component component)
+			throws InstantiationException, IllegalAccessException,
+			ClassNotFoundException, SQLException {
+		String result = "";
+		Collection<ContextQualityDimensionWeight> listCQDWeights = HelperAcessDB
+				.loadContextQualityDimensionWeights(dataSet);
+
+		// int qtdQualityDimensions =
+		// HelperAcessDB.loadQualityDimensions(dataSet)
+		// .size();
+
+		double contextWeights[] = getWeights(listCQDWeights, mapWeights);
+
+		int o = JOptionPane.OK_OPTION;
+		Collection<Document> documents = HelperAcessDB.loadDocuments(dataSet);
+		// quantidade de avaliações
+		int qtdAvaliacoesManuais = 1;
+		// true se quiser que retorne as paginas com exatamente a quantidade de
+		// avalições informada (==)
+		// false se quiser que retorne as paginas com pelo menos a quantidade de
+		// avalições informada (>=)
+		boolean exact = true;
+		Set<String> urlsIreval = HelperAcessDB.loadUrlsValidasFromIreval(
+				qtdAvaliacoesManuais, exact);
+
+		double[] mins = HelperAcessDB.loadMinQDS_InIreval(dataSet, mapWeights
+				.keySet(), urlsIreval);
+		double[] maxs = HelperAcessDB.loadMaxQDS_InIreval(dataSet, mapWeights
+				.keySet(), urlsIreval);
+		int count = 0;
+		for (Document document : documents) {
+			if (!urlsIreval.contains(document.getUrl()))
+				continue;
+			count++;
+			double[] qds = HelperAcessDB
+					.loadDocumentQualityDimensionScoresOfQualityDimensions(
+							document, mapWeights.keySet());
+
+			for (int i = 0; i < qds.length; i++) {
+				qds[i] = (qds[i] - mins[i]) / (maxs[i] - mins[i]);
+			}
+
+			Double documentScore = null;
+			while (documentScore == null) {
+				try {
+					documentScore = Service.fuzzy(qds.length, qds,
+							contextWeights);
+				} catch (MatLabException mle) {
+					System.err.println(mle.getMessage());
+					o = JOptionPane
+							.showConfirmDialog(
+									component,
+									"Possivelmente o serviï¿½o do MatLab nï¿½o estï¿½ iniciado ou houve erro no mesmo!\n"
+											+ "ï¿½ necessï¿½rio (re)iniciar o serviï¿½o do MatLab antes de continuar!\n"
+											+ "Deseja continuar?",
+									"Erro no MatLab",
+									JOptionPane.WARNING_MESSAGE);
+					if (o != JOptionPane.OK_OPTION) {
+						break;
+					}
+				}
+			}
+
+			if (o != JOptionPane.OK_OPTION) {
+				break;
+			}
+
+			result = result
+					+ String.format("%f\n", documentScore.doubleValue());
+		}
+		System.out.println(result);
+		System.out.println(count);
+		return result;
+	}
+
+	/**
+	 * @return
+	 */
+	private static HashMap<String, Integer> putWeights(Integer weightREP,
+			Integer weightCOM, Integer weightTIM, Integer weightGOO,
+			Integer weightYAH, Integer weightLIV) {
+		HashMap<String, Integer> mapWeights = new HashMap<String, Integer>();
+		if (weightREP != null)
+			mapWeights.put(QualityDimension.REP, new Integer(weightREP));
+		if (weightCOM != null)
+			mapWeights.put(QualityDimension.COM, new Integer(weightCOM));
+		if (weightTIM != null)
+			mapWeights.put(QualityDimension.TIM, new Integer(weightTIM));
+		if (weightGOO != null)
+			mapWeights.put(QualityDimension.GOO, new Integer(weightGOO));
+		if (weightYAH != null)
+			mapWeights.put(QualityDimension.YAH, new Integer(weightYAH));
+		if (weightLIV != null)
+			mapWeights.put(QualityDimension.LIV, new Integer(weightLIV));
+		return mapWeights;
+	}
+
+	private static double[] getWeights(
+			Collection<ContextQualityDimensionWeight> listCQDWeights,
+			HashMap<String, Integer> mapWeights) {
+		ArrayList<Double> weights = new ArrayList<Double>();
+		for (ContextQualityDimensionWeight contextQualityDimensionWeight : listCQDWeights) {
+			Integer w = mapWeights.get(contextQualityDimensionWeight
+					.getQualityDimension().getCodeStr());
+			if (w != null)
+				weights.add(w.doubleValue());
+		}
+		double[] arrayWeights = new double[weights.size()];
+		int i = 0;
+		for (Double w : weights) {
+			arrayWeights[i++] = w;
+		}
+		return arrayWeights;
+	}
+}

@@ -1,0 +1,44 @@
+import br.ufrj.cos.db.PopulateDB;
+
+/**
+ * 
+ */
+
+/**
+ * @author Fabricio
+ * 
+ */
+public class InitPopulateDB {
+	public static void main(String[] args) {
+		try {
+			PopulateDB.getDao().openSession();
+
+			// PopulateDB.limparDB();
+
+			// Descomentar abaixo para inicializar o BD a fim de permitir
+			// sistema entrar em produção de modo correto
+			// PopulateDB.initFoxSet();
+
+			// Descomentar abaixo para testar o pOfN (contexto economia)
+			// PopulateDB.popularSearchPofN(5, "relational database", new
+			// Integer(2));
+
+			// Descomentar abaixo para testar o quality fuzzy (contexto
+			// relational database)
+			// PopulateDB.popularSearchQF(600, "relational database");
+
+			// Descomentar abaixo para testar o crawler com contexto de economia
+			// PopulateDB.popularTradicionalEconomia();
+
+			// Descomentar abaixo para testar o crawler com contexto de banco de
+			// dados relacinal
+			// PopulateDB.popularTradicionalBDR(20);
+
+			if (PopulateDB.getDao().getSession().isOpen())
+				PopulateDB.getDao().closeSession();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
