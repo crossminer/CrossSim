@@ -1,4 +1,11 @@
 This repository contains tools and dataset for our paper at CAiSE 2018.
+
+<b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b>
+Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
+Department of Information Engineering, Computer Science and Mathematics,
+Università degli Studi dell'Aquila
+67100 L'Aquila, Italy
+
 # Structure of the repository
 * <b>dataset</b> contains all dataset used in the evaluation. In particular:
   * <b>correlation_results.xlsx</b> stores the result of spearman correlation analysis;
