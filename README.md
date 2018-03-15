@@ -1,4 +1,4 @@
-This repository contains tools and dataset for our paper at SEAA 2018.
+This repository contains tools and dataset for our paper submitted to the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
 
 <b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b>
 
