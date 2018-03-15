@@ -7,7 +7,7 @@ Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
 Department of Information Engineering, Computer Science and Mathematics,
 Università degli Studi dell'Aquila
 
-67100 L'Aquila, Italy
+Via Vetoio 2, 67100 -- L'Aquila, Italy
 
 # Structure of the repository
 * <b>dataset</b> contains all dataset used in the evaluation. In particular:
