@@ -82,7 +82,7 @@ public class Runner {
 				
 		BufferedWriter writer = null;						
 		Graph graph = null;		
-		CrossSim simrank = null;
+		CrossSim crosssim = null;
 				
 		int id1=0,id2=0;
 		double val=0;		
@@ -99,8 +99,8 @@ public class Runner {
 		dictionary = reader.readDictionary(dictFilename);
 		
 		
-		simrank = new CrossSim(graph);
-		simrank.computeSimRank();
+		crosssim = new CrossSim(graph);
+		crosssim.computeSimRank();
 		String repo1="",repo2="";
 								
 		repoList = reader.readRepositoryList3(this.srcDir + "RepositoryList.txt");				
@@ -118,7 +118,7 @@ public class Runner {
 					System.out.println(repo1);
 					id1 = dictionary.get(repo1);
 					id2 = dictionary.get(repo2);					
-					val = simrank.getSimRank(new Integer(id1), new Integer(id2));					
+					val = crosssim.getSimRank(new Integer(id1), new Integer(id2));					
 					sim.put(k2.toString(),val);					
 					System.out.println("The similarity between " + repo1 + " and " + repo2 + " is: " + val);									
 				}				
