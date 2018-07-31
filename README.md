@@ -11,6 +11,8 @@ Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
 
+We propose CrossSim (exploting <b>C</b>ross Project <b>R</b>elationships for Computing <b>O</b>pen <b>S</b>ource <b>S</b>oftware <b>Sim</b>ilarity), an approach that allows to represent in a homogeneous manner different project characteristics belonging to different abstraction layers. 
+
 # Structure of the repository
 * <b>dataset</b> contains all dataset used in the evaluation. In particular:
   * <b>correlation_results.xlsx</b> stores the result of spearman correlation analysis;
