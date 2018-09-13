@@ -11,7 +11,7 @@ Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
 
-We propose CrossSim (exploting <b>C</b>ross Project <b>R</b>elationships for Computing <b>O</b>pen <b>S</b>ource <b>S</b>oftware <b>Sim</b>ilarity), an approach that allows to represent in a homogeneous manner different project characteristics belonging to different abstraction layers. 
+We propose CrossSim (exploting **C**ross Project **R**elationships for Computing **O**pen **S**ource **S**oftware **Sim**ilarity), an approach that allows us to represent in a homogeneous manner different project characteristics belonging to different abstraction layers and eventually to compute similarities among projects. An evaluation on a dataset containing 580 GitHub projects shows that CrossSim outperforms an existing technique, which has been proven to have a good performance in detecting similar GitHub repositories.
 
 # Structure of the repository
 * <b>dataset</b> contains all dataset used in the evaluation. In particular:
