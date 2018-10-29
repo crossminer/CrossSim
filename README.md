@@ -2,7 +2,7 @@
 
 This repository contains tools and dataset for our paper submitted and accepted for publication in the Proceedings of the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
 
-<b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b>
+<b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b> ([Link](https://ieeexplore.ieee.org/abstract/document/8498236))
 
 Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
 
@@ -23,3 +23,23 @@ We propose CrossSim (exploting **C**ross Project **R**elationships for Computing
   * RepoPal results are in <b>RepoPal_Results.pdf</b>;
   * CrossSim3 results are in <b>CrossSim_Results.pdf</b>;
 * All supporting tools are stored in <b>tool</b>.
+
+# How to cite
+If you use the tool or the dataset in your research, please cite our work using the following BibTex entry:
+
+```
+@INPROCEEDINGS{8498236, 
+   author={P. T. Nguyen and J. Di Rocco and R. Rubei and D. Di Ruscio}, 
+   booktitle={2018 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA)}, 
+   title={CrossSim: Exploiting Mutual Relationships to Detect Similar OSS Projects}, 
+   year={2018}, 
+   volume={}, 
+   number={}, 
+   pages={388-395}, 
+   keywords={Libraries;Open source software;Ecosystems;Semantics;Computational modeling;Software systems;Mining software repositories, software similarities, SimRank}, 
+   doi={10.1109/SEAA.2018.00069}, 
+   ISSN={}, 
+   month={Aug}
+}
+
+```
