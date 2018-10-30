@@ -1,10 +1,10 @@
 [![DOI](https://zenodo.org/badge/112594762.svg)](https://zenodo.org/badge/latestdoi/112594762)
 
-This repository contains tools and dataset for our paper submitted and accepted for publication in:
+This repository contains tools and dataset for our papers submitted for publication in:
 1. the Proceedings of the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
 
 
-<b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b> ([Link](https://ieeexplore.ieee.org/abstract/document/8498236))
+<b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b>[ACCEPTED] ([Link](https://ieeexplore.ieee.org/abstract/document/8498236))
 
 Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
 
