@@ -1,0 +1,7 @@
+0	git://github.com/neo4j-contrib/sparql-plugin.git
+84	git://github.com/AskNowQA/AutoSPARQL.git
+217	git://github.com/rdfhdt/hdt-java.git
+253	git://github.com/AKSW/Sparqlify.git
+349	git://github.com/AKSW/jena-sparql-api.git
+442	git://github.com/AKSW/RDFUnit.git
+524	git://github.com/AKSW/SPARQL2NL.git
