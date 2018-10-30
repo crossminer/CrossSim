@@ -12,6 +12,7 @@ Department of Information Engineering, Computer Science and Mathematics,
 Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
+
 2. Software Quality Journal
 
 <b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
