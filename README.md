@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/112594762.svg)](https://zenodo.org/badge/latestdoi/112594762)
+
 
 This repository contains tools and dataset for our paper submitted and accepted for publication in:
 1. the Proceedings of the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
@@ -12,6 +12,10 @@ Department of Information Engineering, Computer Science and Mathematics,
 Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
+
+The tools and dataset that support this paper are available in the release https://github.com/crossminer/CrossSim/tree/0.0.1 
+[![DOI](https://zenodo.org/badge/112594762.svg)](https://zenodo.org/badge/latestdoi/112594762)
+
 2. Software Quality Journal
 
 <b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
