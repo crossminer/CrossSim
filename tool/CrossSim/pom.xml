@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.univaq.crossminer</groupId>
+	<artifactId>crosssim</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<developers>
+		<developer>
+			<name>Phuong Nguyen</name>
+			<email>Phuong.Nguyen@univaq.it</email>
+		</developer>
+		<developer>
+			<name>Juri Di Rocco</name>
+			<email>juri.dirocco@univaq.it</email>
+		</developer>
+		<developer>
+			<name>Davide Di Ruscio</name>
+			<email>davide.diruscio@univaq.it</email>
+		</developer>
+		<developer>
+			<name>Riccardo Rubei</name>
+			<email>riccardo.rubei@gmail.com</email>
+		</developer>
+		<developer>
+			<name>Claudio Di Sipio</name>
+			<email>claudio.disipio@gmail.com</email>
+		</developer>
+	</developers>
+	<dependencies>
+
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+	</dependencies>
+</project>
