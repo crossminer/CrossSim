@@ -13,6 +13,8 @@ Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
 
+The tools and dataset that support this paper are available in the release https://github.com/crossminer/CrossSim/tree/0.0.1 
+
 2. Software Quality Journal
 
 <b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
