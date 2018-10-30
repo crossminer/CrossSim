@@ -1,9 +1,20 @@
 [![DOI](https://zenodo.org/badge/112594762.svg)](https://zenodo.org/badge/latestdoi/112594762)
 
-This repository contains tools and dataset for our paper submitted and accepted for publication in the Proceedings of the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
+This repository contains tools and dataset for our paper submitted and accepted for publication in:
+* the Proceedings of the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
+
 
 <b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b> ([Link](https://ieeexplore.ieee.org/abstract/document/8498236))
 
+Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
+
+Department of Information Engineering, Computer Science and Mathematics,
+Università degli Studi dell'Aquila
+
+Via Vetoio 2, 67100 -- L'Aquila, Italy
+* Software Quality Journal
+
+<b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
 Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
 
 Department of Information Engineering, Computer Science and Mathematics,
@@ -15,13 +26,13 @@ We propose CrossSim (exploting **C**ross Project **R**elationships for Computing
 
 # Structure of the repository
 * <b>dataset</b> contains all dataset used in the evaluation. In particular:
-  * <b>correlation_results.xlsx</b> stores the result of spearman correlation analysis;
-  * <b>correlationScript.r</b> is the R script used to correlate human's score and sim tool rank;
-  * <b>human evaluation.xlsx</b> contains the qualitative analysis results. It inludes the scores given by human evaluators;
   * <b>queries.txt</b> is the list of queries used in the evaluation;
+  * <b>human evaluation.xlsx</b> contains the qualitative analysis results. It inludes the scores given by human evaluators;
   * <b>repository.txt</b> is the list of repositories;
-  * RepoPal results are in <b>RepoPal_Results.pdf</b>;
-  * CrossSim3 results are in <b>CrossSim_Results.pdf</b>;
+  * RepoPal results are in <b>RepoPal_Results.csv</b>;
+  * CrossSim3 results are in <b>CrossSim_Results.csv</b>;
+  * MudaBlue results are in <b>MudaBlue_Results.csv</b>;
+  * CLAN results are in <b>Clan_Results.csv</b>;
 * All supporting tools are stored in <b>tool</b>.
 
 # How to cite
