@@ -32,13 +32,13 @@ public class MudaBlueRun {
 		}
 		return;
 	}
-	
+
 	private void run() throws IOException {
 		loadConfigurations();
 		File folder_path = new File(path);
 		ArrayList<String> pathList = new ArrayList<String>();
 		File[] listOfRepos = folder_path.listFiles();
-
+		try {
 		for (File elem : listOfRepos) {
 			if (elem.listFiles().length <= 1) {
 				String[] subRepo = elem.list();
@@ -50,7 +50,10 @@ public class MudaBlueRun {
 				}
 			}
 		}
-
+		}
+		catch(Exception e) {
+			System.out.println("Error");
+		}
 		MatrixManager manager = new MatrixManager();
 		LSA lsa = new LSA();
 
@@ -79,7 +82,7 @@ public class MudaBlueRun {
 		File file = new File("results.txt");
 		FileWriter fileWriter = new FileWriter(file);
 		for (int i = 0; i < m.getRowDimension(); i++) {
-			fileWriter.write(pathList.get(i) + " " + m.getRowMatrix(i).toString() + "\n");
+			fileWriter.write(i + " " + m.getRowMatrix(i).toString() + "\n");
 		}
 		fileWriter.flush();
 		fileWriter.close();
@@ -92,7 +95,6 @@ public class MudaBlueRun {
 	public static void main(String[] args) throws Exception {
 		MudaBlueRun mbr = new MudaBlueRun();
 		mbr.run();
-		
 
 	}
 

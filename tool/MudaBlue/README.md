@@ -5,8 +5,8 @@ This folder contains the source code implementation of MudaBlue. To execute the 
   $ mvn exec:java -Dexec.mainClass="it.univaq.disim.mudablue.runner.MudaBlueRun" 
   ```
 
-If you want to parse a new set of repositories, first modify the properties file (<b>evaluation.properties</b>) and set sourceDirectory property as the root of git repositories.
-To parse new repositories and generate corrispondig dictionaries, please run the following command:
+To parse a new set of repositories, first set the property  (<b>evaluation.properties</b>) of evaluation.properties file as the root path of folder that contains the repository.
+Then, to parse new repositories and generate corrispondig dictionaries, please run the following command:
 
   ```sh 
   $ mvn exec:java -Dexec.mainClass="it.univaq.disim.mudablue.runner.MudaBlueParse"

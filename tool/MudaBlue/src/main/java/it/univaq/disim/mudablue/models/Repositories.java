@@ -64,6 +64,7 @@ public class Repositories {
 				    mainList.add(scan.next());
 				    
 				}
+				scan.close();
 				return mainList;
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -87,6 +88,7 @@ public class Repositories {
 			{
 				ps.println(elem);
 			}
+			ps.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
