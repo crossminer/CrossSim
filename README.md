@@ -32,27 +32,6 @@ Via Vetoio 2, 67100 -- L'Aquila, Italy
 
 * All supporting tools are stored in <b>tool</b>.
 
-# How to cite
-If you use the tool or the dataset in your research, please cite our work using the following BibTex entry:
-
-```
-@INPROCEEDINGS{8498236, 
-   author={P. T. Nguyen and J. Di Rocco and R. Rubei and D. Di Ruscio}, 
-   booktitle={2018 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA)}, 
-   title={CrossSim: Exploiting Mutual Relationships to Detect Similar OSS Projects}, 
-   year={2018}, 
-   volume={}, 
-   number={}, 
-   pages={388-395}, 
-   keywords={Libraries;Open source software;Ecosystems;Semantics;Computational modeling;Software systems;Mining software repositories, software similarities, SimRank}, 
-   doi={10.1109/SEAA.2018.00069}, 
-   ISSN={}, 
-   month={Aug}
-}
-
-```
-
-
 Running CROSSSim
 -----------
 To execute CROSSSim on a dataset consisting of 580 (tool/CrossSim/evalaution.properties file specifies the input path of mined data)  GitHub projects, please run the following command:
@@ -120,4 +99,25 @@ Bugs
 
 Please report any bugs using GitHub's issue tracker.
 
+
+How to cite
+================
+If you use the tool or the dataset in your research, please cite our work using the following BibTex entry:
+
+```
+@INPROCEEDINGS{8498236, 
+   author={P. T. Nguyen and J. Di Rocco and R. Rubei and D. Di Ruscio}, 
+   booktitle={2018 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA)}, 
+   title={CrossSim: Exploiting Mutual Relationships to Detect Similar OSS Projects}, 
+   year={2018}, 
+   volume={}, 
+   number={}, 
+   pages={388-395}, 
+   keywords={Libraries;Open source software;Ecosystems;Semantics;Computational modeling;Software systems;Mining software repositories, software similarities, SimRank}, 
+   doi={10.1109/SEAA.2018.00069}, 
+   ISSN={}, 
+   month={Aug}
+}
+
+```
 
