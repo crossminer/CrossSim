@@ -1,11 +1,11 @@
-CrossSim: exploting **C**ross Project **R**elationships for Computing **O**pen **S**ource **S**oftware **Sim**ilarity
+CrossSim: Exploting **C**ross Project **R**elationships for Computing **O**pen **S**ource **S**oftware **Sim**ilarity
 ================
  
-CROSSSim,is an approach that allows us to represent in a homogeneous manner different project characteristics belonging to different abstraction layers and eventually to compute similarities among projects. An evaluation on a dataset containing 580 GitHub projects shows that CrossSim outperforms an existing technique, which has been proven to have a good performance in detecting similar GitHub repositories.
+CrossSim is an approach that allows us to represent in a homogeneous manner different project characteristics belonging to different abstraction layers and eventually to compute similarities among GitHub projects. An evaluation on a dataset containing 580 GitHub projects shows that the tool outperforms some existing techniques, which have been proven to have a good performance in detecting similar GitHub repositories.
 
-This is an implementation of the API miner from our papers:  
+This repository contains tools and dataset for the following papers:  
 
-1. the Proceedings of the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
+1. A paper published in the Proceedings of the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
 
 <b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b> ([Link](https://ieeexplore.ieee.org/abstract/document/8498236))
 
@@ -19,9 +19,10 @@ Via Vetoio 2, 67100 -- L'Aquila, Italy
 The tools and dataset that support this paper are available in the release https://github.com/crossminer/CrossSim/tree/0.0.1 
 [![DOI](https://zenodo.org/badge/112594762.svg)](https://zenodo.org/badge/latestdoi/112594762)
 
-2. Software Quality Journal
+2. A paper submitted to the Software Quality Journal
 
 <b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
+
 Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
 
 Department of Information Engineering, Computer Science and Mathematics,
@@ -29,9 +30,9 @@ Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
 
-Running CROSSSim
+Running CrossSim
 -----------
-To execute CROSSSim on a dataset consisting of 580 (tool/CrossSim/evalaution.properties file specifies the input path of mined data)  GitHub projects, please run the following command:
+To execute CrossSim on a dataset consisting of 580 (tool/CrossSim/evalaution.properties file specifies the input path of mined data)  GitHub projects, please run the following command:
 
   ```sh 
   $ mvn -e exec:java -Dexec.mainClass="org.crossminer.similaritycalculator.CrossSim.Runner"
@@ -42,7 +43,7 @@ Input/Output Formats
 
 #### Input Format
 
-CROSSSim takes as input two files: Graph is stored in file "graph", and each line in the file has the following format:
+CrossSim takes as input two files: Graph is stored in file "graph", and each line in the file has the following format:
 
 ```node1#node2```
 
@@ -56,7 +57,7 @@ File "dictionary" is used to store all the artifacts included in the computation
 
 #### Output Format
 
-CROSSSim outputs a matrix of the similarity project. This matrix is represented as a list of files (one file for each project in the dataset). Each file contains the ranked list of similarity to each others projects in the dataset.
+CrossSim outputs a matrix of similarity scores. This matrix is stored in a set of files (one file for each project in the dataset). Each file contains the ranked list of similarity to all the other projects in the dataset.
 For example, the first few lines in the output file ```AKSW_RDFUnit.txt``` for the usage example above are:
 
 ```text
@@ -73,15 +74,15 @@ git://github.com/AKSW/RDFUnit.git git://github.com/castagna/freebase2rdf.git  6.
 ```
 
 
-RepoPal, MudaBlue, and CLAN
+RepoPal, MUDABlue, and CLAN
 ----------------
 
-For comparison purposes, we implemented [RepoPal](http://ieeexplore.ieee.org/document/7884605/), [MudaBlue](http://ieeexplore.ieee.org/document/1371919/), addition [CLAN](http://ieeexplore.ieee.org/document/6227178/). These are provided in the *tool/RepoPal*, *tool/MudaBlue*, and *tool/CLAN* folder respectively. Each folder contains a readme file that describes how to run the tool.                                                                  
+For comparison purposes, we implemented [RepoPal](http://ieeexplore.ieee.org/document/7884605/), [MUDABlue](http://ieeexplore.ieee.org/document/1371919/), addition [CLAN](http://ieeexplore.ieee.org/document/6227178/). These are provided in the *tool/RepoPal*, *tool/MudaBlue*, and *tool/CLAN* folder respectively. Each folder contains a readme file that describes how to run the corresponding tool.                                                                  
 
 Datasets
 --------
 
-The dataset used in the paper are available in the ```dataset/``` subdirectory. In particular:
+The dataset used in the paper is available in the ```dataset/``` subdirectory. In particular:
   * <b>queries.txt</b> is the list of queries used in the evaluation;
   * <b>human evaluation.xlsx</b> contains the qualitative analysis results. It inludes the scores given by human evaluators;
   * <b>repository.txt</b> is the list of repositories;
