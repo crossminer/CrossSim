@@ -5,6 +5,7 @@ CROSSSim,is an approach that allows us to represent in a homogeneous manner diff
 
 This is an implementation of the API miner from our papers:  
 
+1. the Proceedings of the 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2018).
 
 <b>CrossSim: exploiting mutual relationships to detect similar OSS projects</b> ([Link](https://ieeexplore.ieee.org/abstract/document/8498236))
 
