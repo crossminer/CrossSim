@@ -1,4 +1,4 @@
-/home/juri/Scrivania/tempGit/MDEGroup2/totem Array2DRowRealMatrix{{1.0,-0.0,0.0333652976,-0.0}}
-/home/juri/Scrivania/tempGit/MDEGroup2/Uncertainty Array2DRowRealMatrix{{-0.0,1.0,0.0,1.0}}
-/home/juri/Scrivania/tempGit/MDEGroup/totem Array2DRowRealMatrix{{0.0333652976,0.0,1.0,0.0}}
-/home/juri/Scrivania/tempGit/MDEGroup/Uncertainty Array2DRowRealMatrix{{-0.0,1.0,0.0,1.0}}
+0 Array2DRowRealMatrix{{1.0,-0.0,0.0333652976,-0.0}}
+1 Array2DRowRealMatrix{{-0.0,1.0,0.0,1.0}}
+2 Array2DRowRealMatrix{{0.0333652976,0.0,1.0,0.0}}
+3 Array2DRowRealMatrix{{-0.0,1.0,0.0,1.0}}
