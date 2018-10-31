@@ -22,7 +22,7 @@ The tools and dataset that support this paper are available in the release https
 2. A paper submitted to the Software Quality Journal
 
 <b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1252866.svg)](https://doi.org/10.5281/zenodo.1476035)
 Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
 
 Department of Information Engineering, Computer Science and Mathematics,
