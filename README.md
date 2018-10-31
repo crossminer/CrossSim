@@ -28,10 +28,6 @@ Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
 
-
-
-* All supporting tools are stored in <b>tool</b>.
-
 Running CROSSSim
 -----------
 To execute CROSSSim on a dataset consisting of 580 (tool/CrossSim/evalaution.properties file specifies the input path of mined data)  GitHub projects, please run the following command:
