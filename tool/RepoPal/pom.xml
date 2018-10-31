@@ -39,6 +39,31 @@
 			<email>claudio.disipio@gmail.com</email>
 		</developer>
 	</developers>
+	<repositories>
+		<repository>
+			<id>public</id>
+			<name>Archiva Managed Public Repository</name>
+			<url>http://archiva.disim.univaq.it/repository/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>mvnRepo</id>
+			<name>Mvn Repository</name>
+			<url>http://mvnrepository.com</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -50,6 +75,10 @@
 			<artifactId>google-collections</artifactId>
 			<version>1.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.docsimilarity</groupId>
+			<artifactId>docsimilarity</artifactId>
+			<version>1</version>
+		</dependency>
 	</dependencies>
 </project>

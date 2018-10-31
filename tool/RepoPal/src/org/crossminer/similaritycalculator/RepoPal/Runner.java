@@ -68,7 +68,7 @@ public class Runner {
 	
 	/*read RepositoriesReadmeFiles file*/
 	
-	public Map<String, String> readReadmeFileList(String filename) {							
+	private Map<String, String> readReadmeFileList(String filename) {							
 		Map<String, String> vector = new HashMap<String, String>();		
 		String line = null;		
 		String[] vals = null;		
@@ -92,7 +92,7 @@ public class Runner {
 			
 	/*read RepositoriesUsers file*/
 	
-	public Map<String, Set<String>> readRepositoriesUsers(String filename) {							
+	private Map<String, Set<String>> readRepositoriesUsers(String filename) {							
 		Map<String, Set<String>> repositories = new HashMap<String, Set<String>>();		
 		String line = null;
 		String[] vals = null;
@@ -121,7 +121,7 @@ public class Runner {
 	
 	/*read UsersStars file*/
 		
-	public Map<String, Map<String,Integer>> readUsersStars(String filename) {
+	private Map<String, Map<String,Integer>> readUsersStars(String filename) {
 		
 		Map<String, Map<String,Integer>> stars = new HashMap<String, Map<String,Integer>>();									
 		String line = null;
