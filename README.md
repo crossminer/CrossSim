@@ -17,6 +17,7 @@ Università degli Studi dell'Aquila
 Via Vetoio 2, 67100 -- L'Aquila, Italy
 
 The tools and dataset that support this paper are available in the release https://github.com/crossminer/CrossSim/tree/0.0.1 
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1252866.svg)](https://doi.org/10.5281/zenodo.1252866)
 
 
@@ -30,6 +31,7 @@ Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
 The tools and dataset that support this paper are available in the release https://github.com/crossminer/CrossSim/releases/tag/0.0.2 
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1479309.svg)](https://doi.org/10.5281/zenodo.1479309)
 
 Running CrossSim
