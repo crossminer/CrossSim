@@ -29,7 +29,7 @@ Università degli Studi dell'Aquila
 
 Via Vetoio 2, 67100 -- L'Aquila, Italy
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1476035.svg)](https://doi.org/10.5281/zenodo.1476035)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1479309.svg)](https://doi.org/10.5281/zenodo.1479309)
 
 Running CrossSim
 -----------
