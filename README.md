@@ -1,7 +1,7 @@
 CrossSim: Exploting **C**ross Project **R**elationships for Computing **O**pen **S**ource **S**oftware **Sim**ilarity
 ================
  
-CrossSim is an approach that allows us to represent in a homogeneous manner different project characteristics belonging to different abstraction layers and eventually to compute similarities among GitHub projects. An evaluation on a dataset containing 580 GitHub projects shows that the tool outperforms some existing techniques, which have been proven to have a good performance in detecting similar GitHub repositories.
+CrossSim is a versatile tool by exploiting the graph representation: it can incorporate various features into the similarity computation, e.g., third-party libraries, API funtion calls, package names, to name a few. An evaluation on a dataset containing 580 GitHub projects shows that the tool outperforms MUDABlue, CLAN, and RepoPal with respect to different quality metrics.
 
 This repository contains tools and dataset for the following papers:  
 
@@ -24,6 +24,7 @@ The tools and dataset that support this paper are available in the release https
 2. A paper submitted to the Software Quality Journal
 
 <b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
+
 Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
 
 Department of Information Engineering, Computer Science and Mathematics,
