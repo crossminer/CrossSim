@@ -6,11 +6,11 @@ We applied SimRank in CrossSim to compute similarites among GitHub open source s
 
 which specifies the representation of one edge in the graph: node1 -> node2.
 
-File "dictionary" is used to store all the artifacts included in the computation. It serves as a reference to the graph nodes. The nodes are either users/developers, projects, or dependencies (third party library).
+File Dictionary.txt is used to store all artifacts included in the computation. It serves as a reference to the graph nodes. The nodes are either users/developers, projects, or dependencies (third party libraries).
 
-SimRank then performs computation on the graph using the two files graph and dictionary to produce similarity files. For each project, a file will be generated containing all similarity scores for all the other projects of the dataset.
+SimRank then performs computation on the graph using the two files Graph.txt and Dictionary.txt to produce similarity files. For each project, a file will be generated containing all similarity scores to all the other projects of the dataset.
 
-You need to change the parameters specified in evaluations.properties to meet your configurations.
+You should change the parameters specified in evaluations.properties to meet your configurations.
 
 To execute the runner on a dataset consisting of 580 GitHub projects, please run the following command:
 
