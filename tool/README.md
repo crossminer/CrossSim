@@ -1,1 +1,1 @@
-This folder contains the supporting tools of the 4  approaches (i.e. CROSSSim, RepoPal, MudaBlue, CLAN) used in the evaluation.
+This folder contains the all the similarity tools used in the evaluation, i.e., CrossSim, RepoPal, MUDABlue, CLAN.
