@@ -12,8 +12,7 @@ SimRank then performs computation on the graph using the two files graph and dic
 
 You need to change the parameters specified in evaluations.properties to meet your configurations.
 
-This folder contains the source code implementation of CROSSSim. To execute the runner on a dataset consisting of 580 GitHub projects, please run the following command:
-
+To execute the runner on a dataset consisting of 580 GitHub projects, please run the following command:
 
   ```sh 
   $ mvn -e exec:java -Dexec.mainClass="org.crossminer.similaritycalculator.CrossSim.Runner"
