@@ -21,7 +21,7 @@ The tools and dataset that support this paper are available in the release https
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1252866.svg)](https://doi.org/10.5281/zenodo.1252866)
 
 
-2. A paper submitted to the Software Quality Journal
+2. A paper that has been accepted for publication by Software Quality Journal
 
 <b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
 
