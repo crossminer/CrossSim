@@ -23,7 +23,7 @@ The tools and dataset that support this paper are available in the release https
 
 2. A paper that has been accepted for publication by Software Quality Journal
 
-<b>An Automated Approach to Assess the Similarity of GitHub Repositories</b>
+<b>An Automated Approach to Assess the Similarity of GitHub Repositories</b> ([Preprint](https://github.com/crossminer/CrossSim/CrossSim-Journal.pdf))
 
 Phuong T. Nguyen, Juri Di Rocco, Riccardo Rubei, Davide Di Ruscio
 
