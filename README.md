@@ -79,10 +79,33 @@ git://github.com/AKSW/RDFUnit.git git://github.com/castagna/freebase2rdf.git  6.
 ```
 
 
-RepoPal, MUDABlue, and CLAN
+MUDABlue, CLAN, and RepoPal
 ----------------
 
-For comparison purposes, we implemented [RepoPal](http://ieeexplore.ieee.org/document/7884605/), [MUDABlue](http://ieeexplore.ieee.org/document/1371919/), addition [CLAN](http://ieeexplore.ieee.org/document/6227178/). These are provided in the *tool/RepoPal*, *tool/MudaBlue*, and *tool/CLAN* folder respectively. Each folder contains a readme file that describes how to run the corresponding tool.                                                                  
+For comparison purposes, we re-implemented [MUDABlue](http://ieeexplore.ieee.org/document/1371919/), [CLAN](http://ieeexplore.ieee.org/document/6227178/), and [RepoPal](http://ieeexplore.ieee.org/document/7884605/). These are provided in the *tool/RepoPal*, *tool/MudaBlue*, and *tool/CLAN* folder respectively. Each folder contains a readme file that describes how to run the corresponding tool.          
+
+MUDABlue is a Java source code implementation of the following paper:
+
+**MUDABlue: An Automatic Categorization System for Open Source Repositories** ([link](https://sel.ist.osaka-u.ac.jp/lab-db/betuzuri/archive/506/506.pdf));
+
+CLAN is a Java source code implementation of the following paper:
+
+**Detecting Similar Software Applications** ([link](https://www.cs.uic.edu/~drmark/index_htm_files/CLAN.pdf));
+
+RepoPal is a Java source code implementation of the following paper:
+
+**Detecting Similar Repositories on GitHub** ([link](https://www.researchgate.net/publication/315637688_Detecting_similar_repositories_on_GitHub));
+
+
+
+
+
+
+
+
+
+
+
 
 Datasets
 --------
@@ -123,4 +146,22 @@ If you use the tool or the dataset in your research, please cite our work using 
 }
 
 ```
+If you use any of the reimplementations for MUDABlue, CLAN, RepoPal, please cite the following paper:
+
+```
+@article{Nguyen:2019:JSS:CrossSim,
+   doi = {10.1007/s11219-019-09483-0},
+   url = {https://doi.org/10.1007%2Fs11219-019-09483-0},
+   year = 2020,
+   month = {feb},
+   publisher = {Springer Science and Business Media {LLC}},
+   author = {Phuong T. Nguyen and Juri {Di Rocco} and Riccardo Rubei and Davide {Di Ruscio}},
+   title = {An automated approach to assess the similarity of {GitHub} repositories},
+   journal = {Software Quality Journal}
+}
+
+```
+
+
+
 
