@@ -162,6 +162,8 @@ If you use any of the reimplementations for MUDABlue, CLAN, RepoPal, please cite
 
 ```
 
+## Troubleshooting
 
+If you encounter any difficulties in working with the tool or the datasets, please do not hesitate to contact us at one of the following emails: phuong.nguyen@univaq.it, juri.dirocco@univaq.it. We will try our best to answer you as soon as possible.
 
 
