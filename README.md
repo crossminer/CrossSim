@@ -149,7 +149,7 @@ If you use the tool or the dataset in your research, please cite our work using 
 If you use any of the reimplementations for MUDABlue, CLAN, RepoPal, please cite also the following paper:
 
 ```
-@article{Nguyen:2019:JSS:CrossSim,
+@article{Nguyen:2019:SQJ:CrossSim,
    doi = {10.1007/s11219-019-09483-0},
    url = {https://doi.org/10.1007%2Fs11219-019-09483-0},
    year = 2020,
